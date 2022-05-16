@@ -48,3 +48,7 @@ ol, ul {
 .game-info {
     margin-left: 20px;
 }
+
+.reset-btn {
+    margin-top: 10px;
+}
