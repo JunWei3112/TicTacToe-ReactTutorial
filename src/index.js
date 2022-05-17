@@ -77,6 +77,15 @@ class Game extends React.Component {
         })
     }
 
+    resetBoard() {
+        this.setState({
+            history: [{
+                squares: Array(9).fill(null),
+            }], 
+            stepNumber: 0,
+        })
+    }
+
     render() {
         const history = this.state.history;
         const current = history[this.state.stepNumber];
@@ -107,6 +116,7 @@ class Game extends React.Component {
                         squares={current.squares}
                         onClick={(i) => this.handleClick(i)}
                     />
+                     <button className="reset-btn" onClick={() => this.resetBoard()}>Reset</button>
                 </div>
                 <div className="game-info">
                     <div>{status}</div>
